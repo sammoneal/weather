@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+requests = "*"
+geopy = "*"
+wtforms = "*"
+flask-wtf = "*"
+
+[dev-packages]
+pylint = "*"
+
+[requires]
+python_version = "3.7"

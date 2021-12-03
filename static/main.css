@@ -1,0 +1,12 @@
+.header{
+    background: #eee;
+}
+
+.body{
+    background: #ddd;
+}
+
+.entry{
+    border: #333 1px solid;
+    padding: 1em;
+}
