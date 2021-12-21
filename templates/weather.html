@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="body">
+    <nav>
+        <a href="{{ url_for('search') }}">Weather</a>
+        <input type="text">
+    </nav>
+    <div class="weather-city">
+        <h1>{{ weather.city }}</h1>
+    </div>
+    <div class="weather-wrapper">
+        {% for item in weather.forecast[:8]  %}
+            <div class="weather-title">{{ item['name'] }}</div>
+        {% endfor %}
+        <div class="weather-entry-big">
+            <div class="big-icon">
+                <img src="{{weather.forecast[1]['icon']}}" alt="">
+            </div>
+            <div class="big-temp">{{ weather.forecast[1]['temperature'] }} F</div>
+            <div class="big-wind">{{ weather.forecast[1]['windDirection'] }}</div>
+            <div class="big-desc">{{ weather.forecast[1]['detailedForecast'] }}</div>
+        </div>
+        {% for item in weather.forecast[1:8] %}
+            <div class="weather-entry">
+                <img src="{{ item['icon'] }}" alt="">
+                <p>{{ item['shortForecast'] }}</p>
+                <p>{{ item['temperature'] }} F</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
