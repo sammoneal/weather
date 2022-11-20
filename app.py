@@ -21,11 +21,6 @@ def weather(lat, long):
     return render_template('weather.html', title=weather.city+' - Weather', weather=weather)
 
 
-
-
-
-
-
 #CSS grid refs
 @app.route('/grid')
 def grid():
