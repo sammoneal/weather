@@ -3,7 +3,29 @@
 <div class="body">
     <nav>
         <a href="{{ url_for('search') }}">Weather</a>
-        <input type="text">
+        <div class="search">
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <div class="form-group">
+                        {{ form.location.label }}
+                        {% if form.location.errors  %}
+                        {{ form.location }}
+                        <div class="invalid-feedback">
+                            {% for error in form.location.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.location }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit() }}
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </nav>
     <div class="weather-city">
         <h1>{{ weather.city }}</h1>
