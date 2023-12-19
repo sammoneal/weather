@@ -1,5 +1,5 @@
 import time
-from weather_api import WeatherAPI, geolocator
+from weather_api.weather_api import WeatherAPI, geolocator
 
 CITIES = [
     "Boston",

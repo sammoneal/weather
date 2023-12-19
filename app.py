@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask.helpers import url_for
 from werkzeug.utils import redirect
-from weather_api import WeatherAPI
+from weather_api.weather_api import WeatherAPI
 from forms import SearchForm
 
 app = Flask(__name__)
