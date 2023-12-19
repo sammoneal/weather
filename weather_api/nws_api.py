@@ -7,7 +7,7 @@ Cords = namedtuple("Cords", ["lat", "long"])
 geolocator = Nominatim(user_agent="flask_weather")
 
 
-class WeatherAPI:
+class NWS:
     BASE_URL = "https://api.weather.gov/points/"
 
     def __init__(self, lat, long) -> None:

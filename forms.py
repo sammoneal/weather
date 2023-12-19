@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, ValidationError
-from weather_api.weather_api import geolocator
+from weather_api import geolocator
 
 
 class SearchForm(FlaskForm):

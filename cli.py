@@ -2,7 +2,7 @@ import sys
 from datetime import datetime
 from textwrap import fill
 
-from weather_api.weather_api import WeatherAPI, geolocator
+from weather_api import WeatherAPI, geolocator
 
 location = geolocator.geocode(sys.argv[1], country_codes="US")
 
