@@ -35,6 +35,9 @@
         background: #33cccc; /* Fallback */
         animation: color 20s infinite linear;
       }
+      svg{
+        color: white;
+      }
       .page-container {
         display: flex;
         justify-content: center;
@@ -61,7 +64,7 @@
         /* border: 3px solid yellow; */
         background-color: rgb(38, 38, 38);
         border-bottom: 2px solid white;
-        height: 20%;
+        height: 7vh;
         padding-left: 30px;
         padding-right: 30px;
       }
@@ -83,8 +86,19 @@
         color: white;
         border: 2px solid white;
         border-radius: 8px;
+        font-size: 30px;
+      }
+      button {
+        padding: 12px 10px;
+        flex-grow: 1;
+        height: 100%;
+        background-color: rgb(38, 38, 38);
+        color: white;
+        border: 2px solid white;
+        border-radius: 8px;
         font-size: x-large;
       }
+
       nav ul {
         list-style-type: none;
       }
@@ -94,6 +108,14 @@
         margin: 10px;
         text-decoration: none;
       }
+      .hamburger{
+        height: 30px;
+        width: auto;
+      }
+      .icon{
+        height: 30px;
+        width: auto;
+      }
     </style>
   </head>
   <body>
@@ -101,14 +123,16 @@
         <a href="">Weather</a>
         <ul class="nav-links">
           <li><a href="">Cities</a></li>
-          <li><a href="">Settings</a></li>
+          <li><img src="../static/icons/hamburger-svgrepo-com.svg" alt="" class="hamburger"></li>
+          <!-- <li><a href=""><img class="hamburger" src="../static/icons/hamburger-svgrepo-com.svg" ></a></li> -->
         </ul>
       </nav>
     <div class="page-container">
       <form action="" class="form-layout-splash">
         <div class="form-container">
-          <input type="text" placeholder="Akron, OH" class="form-input" />
-          <input type="submit" value="Search" class="form-submit" />
+          <input type="text" placeholder="Enter a US Location" class="form-input" />
+          <button><img class="icon" src="../static/icons/magnifying-glass-for-search-svgrepo-com.svg" alt=""></button>
+          <button><img class="icon" src="../static/icons/location-pin-svgrepo-com.svg" alt=""></button>
         </div>
       </form>
     </div>
