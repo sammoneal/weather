@@ -1,5 +1,4 @@
 import sys
-from datetime import datetime
 from textwrap import fill
 
 from weather_api import WeatherAPI, geolocator
@@ -16,14 +15,10 @@ print(
 )
 
 for item, _ in zip(weather.hourly, range(24)):
-    time_stamp = item["startTime"]
-    time = datetime.strptime(time_stamp[:19], "%Y-%m-%dT%H:%M:%S")
-
+    time = item["time"]
     short = item["shortForecast"]
     temp = item["temperature"]
-
     precip = item["probabilityOfPrecipitation"]["value"]
-    precip = precip if precip else 0
     day = "Day" if item["isDaytime"] else "Night"
 
     wind = item["windSpeed"]
