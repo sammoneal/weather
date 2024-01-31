@@ -29,7 +29,7 @@ def weather(lat, long):
         )
     weather = WeatherAPI(lat, long)
     return render_template(
-        "weather.html", title=weather.city + " - Weather", weather=weather, form=form
+        "dashboard.html", title=weather.city + " - Weather", weather=weather
     )
 
 @app.route("/demo")

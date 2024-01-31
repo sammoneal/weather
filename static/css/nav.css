@@ -1,0 +1,29 @@
+/* Nav */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(38, 38, 38);
+    border-bottom: 2px solid white;
+    height: 7vh;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  nav ul {
+    list-style-type: none;
+  }
+  nav a {
+    font-size: x-large;
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+  }
+  .hamburger {
+    height: 30px;
+    width: auto;
+  }

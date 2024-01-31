@@ -1,54 +1,21 @@
-{% extends 'layout.html' %}
-{% block content %}
-<div class="body">
-    <nav>
-        <a href="{{ url_for('search') }}">Weather</a>
-        <div class="search">
-            <form action="" method="POST">
-                {{ form.hidden_tag() }}
-                <fieldset class="form-group">
-                    <div class="form-group">
-                        {{ form.location.label }}
-                        {% if form.location.errors  %}
-                        {{ form.location }}
-                        <div class="invalid-feedback">
-                            {% for error in form.location.errors %}
-                            <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                        {% else %}
-                        {{ form.location }}
-                        {% endif %}
-                    </div>
-                    <div class="form-group">
-                        {{ form.submit() }}
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-    </nav>
-    <div class="weather-city">
-        <h1>{{ weather.city }}</h1>
-    </div>
-    <div class="weather-wrapper">
-        {% for item in weather.forecast[:8]  %}
-            <div class="weather-title">{{ item['name'] }}</div>
-        {% endfor %}
-        <div class="weather-entry-big">
-            <div class="big-icon">
-                <img src="{{weather.forecast[1]['icon']}}" alt="">
-            </div>
-            <div class="big-temp">{{ weather.forecast[1]['temperature'] }} F</div>
-            <div class="big-wind">{{ weather.forecast[1]['windDirection'] }}</div>
-            <div class="big-desc">{{ weather.forecast[1]['detailedForecast'] }}</div>
-        </div>
-        {% for item in weather.forecast[1:8] %}
-            <div class="weather-entry">
-                <img src="{{ item['icon'] }}" alt="">
-                <p>{{ item['shortForecast'] }}</p>
-                <p>{{ item['temperature'] }} F</p>
-            </div>
-        {% endfor %}
-    </div>
-</div>
-{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-icons-wind.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    {% include 'nav.html' %}
+    {% block nav %}
+    {% endblock nav %}
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+</body>

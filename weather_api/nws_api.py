@@ -18,23 +18,20 @@ class NWS:
         self.lat, self.long = lat, long
 
         self.url = self.BASE_URL + f"{self.lat},{self.long}"
-        self.geo = requests.get(self.url).json()
+        self.metadata = requests.get(self.url).json()
+        self.forecast = self.get_forecast(self.metadata["properties"]["forecast"])
+        self.hourly = self.get_forecast(self.metadata["properties"]["forecastHourly"])
 
-        self.location = self.geo["properties"]["relativeLocation"]
-        self.url_forecast = self.geo["properties"]["forecast"]
-        self.url_hourly = self.geo["properties"]["forecastHourly"]
+        self.max_temp = self.current['temperature']
+        self.min_temp = self.max_temp
 
-        self.forecast = self.get_forecast(self.url_forecast)
-        self.hourly = self.get_forecast(self.url_hourly)
-
-        self.current = self.forecast[0]
-
+        #Process the response
         for item in chain(self.forecast, self.hourly):
-            # Time code
+            #Time code
             item["time"] = datetime.strptime(
                 item["startTime"][:19], "%Y-%m-%dT%H:%M:%S"
             )
-            # Icon map
+            #Icon map
             conditions = re.split("then", item["shortForecast"])
             try:
                 icon_set = conditions_map[conditions[0]]
@@ -44,16 +41,25 @@ class NWS:
                     item["icon"] = icon_set[-1]
             except LookupError:
                 item["icon"] = "wi-alien"
-            # Percipitation fix
+            #Percipitation fix
             precip = item["probabilityOfPrecipitation"]["value"]
             precip = precip if precip else 0
-            # Wind icon
-            item["windIcon"] = f"wi wi-wind towards-{item['windDirection'].lower()}"
+            #Wind icon
+            item["windIcon"] = f"wi-towards-{item['windDirection'].lower()}"
+            if item['temperature'] > self.max_temp:
+                self.max_temp = item['temperature']
+            elif item['temperature'] < self.min_temp:
+                self.min_temp = item['temperature']
+
 
     @property
     def city(self):
-        loc = self.location["properties"]
-        return f"{loc['city']}, {loc['state']}"
+        location = self.metadata["properties"]["relativeLocation"]["properties"]
+        return f"{location['city']}, {location['state']}"
+    
+    @property
+    def current(self):
+        return self.forecast[0]
 
     @staticmethod
     def get_forecast(url):

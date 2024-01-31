@@ -1,0 +1,17 @@
+{% block nav %}
+<header>
+  <nav class="nav-bar">
+    <a href="">Weather</a>
+    <ul class="nav-links">
+      <li><a href="">Cities</a></li>
+      <li>
+        <img
+          src="{{ url_for('static', filename='icons/hamburger-svgrepo-com.svg') }}"
+          alt=""
+          class="hamburger"
+        />
+      </li>
+    </ul>
+  </nav>
+</header>
+{% endblock nav %}

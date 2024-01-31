@@ -11,6 +11,7 @@ conditions_map = {
     "Drizzle Likely": ["wi-day-showers", "wi-night-alt-showers"],
     "Haze": ["wi-day-haze", "wi-night-fog"],
     "Isolated Rain Showers": ["wi-day-showers", "wi-night-alt-showers"],
+    "Isolated Snow Showers": ["wi-day-snow", "wi-night-alt-snow"],
     "Light Rain": ["wi-day-rain", "wi-night-alt-rain"],
     "Light Rain Likely": ["wi-day-rain", "wi-night-alt-rain"],
     "Light Snow": ["wi-day-snow", "wi-night-alt-snow"],

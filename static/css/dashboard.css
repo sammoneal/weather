@@ -1,0 +1,336 @@
+/* Layout */
+body {
+  background-color: skyblue;
+  font-family: sans-serif;
+  margin: 0;
+}
+.page-container {
+  display: flex;
+  justify-content: center;
+}
+.dashboard-container {
+  width: 95%;
+  margin-bottom: 20px;
+}
+/* Shared formats */
+.tile {
+  border: 2px solid rgb(38, 38, 38);
+}
+/* Forecast layout */
+.forecast-container {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 25vh;
+  gap: 2vh;
+}
+.forecast-column {
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 2vh;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Primary Forecast */
+.primary {
+  flex: 1;
+  flex-grow: 2;
+  background-color: gainsboro;
+  border-radius: 10px;
+}
+.primary-day {
+  margin: 10px;
+  background-color: lightseagreen;
+}
+.primary-middle-container {
+  height: 50%;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+.primary-temp {
+  margin-left: 20px;
+  flex: 1;
+  font-size: 4.5rem;
+  background-color: lightgoldenrodyellow;
+}
+.primary-conditions {
+  flex: 1;
+  font-size: 5rem;
+  background-color: lightpink;
+}
+.primary-wind {
+  background-color: lightcyan;
+  margin-top: 0;
+  margin-left: 20px;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+.primary-wind i {
+  display: flex;
+  font-size: 2.2rem;
+  margin: 0;
+}
+.primary-wind p {
+  display: flex;
+  margin: 0;
+}
+.primary-percip {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: lightsalmon;
+}
+.primary-percip i {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.primary-percip p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+/* Tonight forecast */
+.later {
+  flex: 1;
+  flex-grow: 1;
+  background-color: gainsboro;
+  border-radius: 10px;
+}
+.later-day {
+  margin: 10px;
+  background-color: lightseagreen;
+}
+.later-middle-container {
+  height: 40%;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+.later-bottom-container {
+  height: 30%;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+.later-temp {
+  margin-left: 20px;
+  flex: 1;
+  font-size: 4rem;
+  background-color: lightgoldenrodyellow;
+}
+.later-conditions {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 4.5rem;
+  background-color: lightpink;
+}
+.later-wind {
+  background-color: lightcyan;
+  margin-top: 0;
+  margin-left: 20px;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+.later-wind i {
+  display: flex;
+  font-size: 2rem;
+  margin: 0;
+}
+.later-wind p {
+  display: flex;
+  margin: 0;
+}
+.later-percip {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: lightsalmon;
+}
+.later-percip i {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.later-percip p {
+  margin: 0;
+  font-size: 1.3rem;
+}
+/* Secondary forecast */
+.secondary {
+  flex: 1;
+  width: 100%;
+  height: 10vh;
+  background-color: gainsboro;
+  border-radius: 10px;
+}
+.secondary-day {
+  margin: 10px;
+  background-color: lightseagreen;
+}
+.secondary-middle-container {
+  height: 50%;
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+.secondary-temp {
+  margin-left: 20px;
+  flex: 1;
+  font-size: 2rem;
+  background-color: lightgoldenrodyellow;
+}
+.secondary-conditions {
+  flex: 1;
+  font-size: 2.5rem;
+  background-color: lightpink;
+}
+/* Chart */
+.chart-container {
+  display: flex;
+  height: 25vh;
+  margin-top: 3vh;
+  border-radius: 10px;
+  background-color: gainsboro;
+  padding: 10px;
+}
+.key {
+  width: 40px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.key p {
+  margin: 0;
+  text-align: right;
+  padding-right: 2px;
+}
+.unit {
+  font-size: 90%;
+}
+.unit-mph {
+  font-size: 70%;
+}
+.graphic-container {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+}
+.wind-graphic-container {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0px;
+}
+.chart-line1 {
+  position: absolute;
+  top: 1%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.chart-line2 {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.chart-line3 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.chart-line4 {
+  position: absolute;
+  top: 75%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.chart-line5 {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.mark-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.mark-container i {
+  font-size: 1.2rem;
+}
+.wind-mark {
+  text-align: center;
+  margin: 0;
+}
+.bar {
+  flex: 1;
+  background-color: rgb(57, 213, 213);
+  border-radius: 2px;
+  z-index: 3;
+}
+.mark {
+  position: absolute;
+  top: 500px;
+  text-align: center;
+}
+.mark2 {
+  position: absolute;
+  top: 60px;
+  text-align: center;
+}
+.mark-bar {
+  position: absolute;
+  text-align: center;
+  top: 15%;
+  height: 85%;
+  width: 16px;
+  background-color: blue;
+}
+.alt {
+  background-color: purple;
+}

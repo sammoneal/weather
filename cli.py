@@ -26,3 +26,5 @@ for item, _ in zip(weather.hourly, range(24)):
 
     output = f'{time.month:<2}/{time.day:<2}  {time.hour%12:>2}:00{"AM" if time.hour < 12 else "PM"}  {day:<5}  {short:<30}  {temp:>3}F  {precip:>3}%  {wind:>6} {wind_dir:<3}'
     print(output)
+
+print(f"High: {weather.max_temp} Low: {weather.min_temp}")
