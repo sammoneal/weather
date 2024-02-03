@@ -1,0 +1,26 @@
+{% block precip %}
+<div class="chart-container tile">
+  <div class="key">
+    <p>100<span class="unit">%</span></p>
+    <p>75<span class="unit">%</span></p>
+    <p>50<span class="unit">%</span></p>
+    <p>25<span class="unit">%</span></p>
+    <p>0<span class="unit">%</span></p>
+  </div>
+  <div class="graphic-container">
+    {% for i in range(1,6) %}
+      <div class="chart-line{{ i }}"></div>
+    {% endfor %}
+    {% for item in weather.hourly %}
+        {% set height = item.probabilityOfPrecipitation.value %}
+        {% if item.isDaytime %}
+            {% set class = 'day' %}
+        {% else %}
+            {% set class = 'night' %}
+        {% endif %}
+        {% set style = 'style=height:'+ height|string +'%'%}
+        <div class="bar {{ class }}" {{ style }}></div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock precip %}

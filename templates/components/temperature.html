@@ -1,0 +1,24 @@
+{% block temp %}
+<div class="chart-container tile">
+  <div class="key">
+    {% for label in weather.temp_labels %}
+    <p>{{ label }}<span class="unit">&degF</span></p>
+    {% endfor %}
+  </div>
+  <div class="graphic-container">
+    {% for i in range(1,6) %}
+      <div class="chart-line{{ i }}"></div>
+    {% endfor %}
+    {% for item in weather.hourly %}
+        {% set height = (((item.temperature - weather.min_temp) / weather.temp_spread) * 100) // 1 %}
+        {% if item.isDaytime %}
+            {% set class = 'day' %}
+        {% else %}
+            {% set class = 'night' %}
+        {% endif %}
+        {% set style = 'style=height:'+ height|string +'%'%}
+        <div class="bar {{ class }}" {{ style }}></div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock temp %}

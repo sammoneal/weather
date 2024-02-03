@@ -1,0 +1,103 @@
+{% block forecast %}
+<div class="forecast-container">
+    <div class="primary tile">
+        <h4 class="primary-day">{{ weather.current.time.strftime("%m/%d %A") }}</h4>
+        <div class="primary-middle-container">
+            <h1 class="primary-temp">{{ weather.current.temperature }}<span class="unit">&degF</span></h1>
+            <i class="wi {{ weather.current.icon }} primary-conditions"></i>
+            <div class="primary-percip">
+                <i class="wi wi-umbrella"></i>
+                <p>{{ weather.current.probabilityOfPrecipitation.value }}%</p>
+            </div>
+        </div>
+        <div class="primary-wind">
+            <i class="wi wi-strong-wind"></i>
+            <p>{{ weather.current.windSpeed }}</p>
+            <i class="wi wi-wind {{ weather.current.windIcon }}"></i>
+            <p/>{{ weather.current.windDirection }}</p>
+        </div>
+    </div>
+        <div class="later tile">
+            <h4 class="later-day">12/31 Tonight</h4>
+                <div class="later-middle-container">
+                    <h1 class="later-temp">32<span class="unit">&degF</span></h1>
+                    <i class="wi wi-night-clear later-conditions"></i>
+                </div>
+                <div class="later-bottom-container">
+                    <div class="later-wind">
+                        <p>17mph</p>
+                        <i class="wi wi-wind wi-towards-n"></i>
+                        <p/>N</p>
+                    </div>
+                    <div class="later-percip">
+                        <i class="wi wi-umbrella"></i>
+                        <p>0%</p>
+                    </div>
+                </div>
+        </div>
+    <div class="forecast-column">
+        <div class="secondary tile">
+            <h5 class="secondary-day">1/2 Tuesday</h5>
+            <div class="secondary-middle-container">
+                <h2 class="secondary-temp">38<span class="unit">&degF</span></h2>
+                <i class="wi wi-day-sunny secondary-conditions"></i>
+            </div>
+        </div>
+        <div class="secondary tile">
+            <h5 class="secondary-day">1/2 Tuesday</h5>
+            <div class="secondary-middle-container">
+                <h2 class="secondary-temp">29<span class="unit">&degF</span></h2>
+                <i class="wi wi-night-clear secondary-conditions"></i>
+            </div>
+        </div>
+    </div>
+    <div class="forecast-column">
+        <div class="secondary tile">
+            <h5 class="secondary-day">1/3 Wednesday</h5>
+            <div class="secondary-middle-container">
+                <h2 class="secondary-temp">45&degF</h2>
+                <i class="wi wi-day-cloudy secondary-conditions"></i>
+            </div>
+        </div>
+        <div class="secondary tile">
+            <h5 class="secondary-day">1/3 Wednesday</h5>
+            <div class="secondary-middle-container">
+                <h2 class="secondary-temp">33&degF</h2>
+                <i class="wi wi-night-cloudy secondary-conditions"></i>
+            </div>
+        </div>
+    </div>
+    <div class="forecast-column">
+        <div class="secondary tile">
+            <h5 class="secondary-day">1/4 Thursday</h5>
+            <div class="secondary-middle-container">
+                <h2 class="secondary-temp">50&degF</h2>
+                <i class="wi wi-day-rain secondary-conditions"></i>
+            </div>
+        </div>
+        <div class="secondary tile">
+            <h5 class="secondary-day">1/4 Thursday</h5>
+            <div class="secondary-middle-container">
+                <h2 class="secondary-temp">42&degF</h2>
+                <i class="wi wi-night-showers secondary-conditions"></i>
+            </div>
+        </div>
+    </div>
+    <div class="forecast-column">
+        <div class="secondary tile">
+            <h5 class="secondary-day">1/5 Friday</h5>
+            <div class="secondary-middle-container">
+                <h2 class="secondary-temp">59&degF</h2>
+                <i class="wi wi-day-sunny secondary-conditions"></i>
+            </div>
+        </div>
+        <div class="secondary tile">
+            <h5 class="secondary-day">1/5 Friday</h5>
+            <div class="secondary-middle-container">
+                <h2 class="secondary-temp">40&degF</h2>
+                <i class="wi wi-night-clear secondary-conditions"></i>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock forecast %}

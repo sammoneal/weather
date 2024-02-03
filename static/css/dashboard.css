@@ -16,6 +16,12 @@ body {
 .tile {
   border: 2px solid rgb(38, 38, 38);
 }
+.day {
+  background-color: lightcyan;
+}
+.night {
+  background-color: plum;
+}
 /* Forecast layout */
 .forecast-container {
   margin-top: 3vh;
@@ -39,16 +45,16 @@ body {
 .primary {
   flex: 1;
   flex-grow: 2;
-  background-color: gainsboro;
+  /* background-color: gainsboro; */
   border-radius: 10px;
 }
 .primary-day {
   margin: 10px;
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
 }
 .primary-middle-container {
   height: 50%;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,15 +66,15 @@ body {
   margin-left: 20px;
   flex: 1;
   font-size: 4.5rem;
-  background-color: lightgoldenrodyellow;
+  /* background-color: lightgoldenrodyellow; */
 }
 .primary-conditions {
   flex: 1;
   font-size: 5rem;
-  background-color: lightpink;
+  /* background-color: lightpink; */
 }
 .primary-wind {
-  background-color: lightcyan;
+  /* background-color: lightcyan; */
   margin-top: 0;
   margin-left: 20px;
   font-size: 1.5rem;
@@ -93,7 +99,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  background-color: lightsalmon;
+  /* background-color: lightsalmon; */
 }
 .primary-percip i {
   margin: 0;
@@ -107,16 +113,16 @@ body {
 .later {
   flex: 1;
   flex-grow: 1;
-  background-color: gainsboro;
+  /* background-color: gainsboro; */
   border-radius: 10px;
 }
 .later-day {
   margin: 10px;
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
 }
 .later-middle-container {
   height: 40%;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -126,7 +132,7 @@ body {
 }
 .later-bottom-container {
   height: 30%;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -138,7 +144,7 @@ body {
   margin-left: 20px;
   flex: 1;
   font-size: 4rem;
-  background-color: lightgoldenrodyellow;
+  /* background-color: lightgoldenrodyellow; */
 }
 .later-conditions {
   flex: 1;
@@ -249,7 +255,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 5px;
+  gap: 2px;
 }
 .wind-graphic-container {
   flex: 1;
@@ -309,7 +315,7 @@ body {
 }
 .bar {
   flex: 1;
-  background-color: rgb(57, 213, 213);
+  /* background-color: rgb(57, 213, 213); */
   border-radius: 2px;
   z-index: 3;
 }
