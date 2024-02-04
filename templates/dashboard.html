@@ -3,17 +3,9 @@
     <div class="page-container">
         <div class="dashboard-container">
             {% include './components/forecast.html' %}
-            {% block forecast %}
-            {% endblock forecast %}
             {% include './components/temperature.html' %}
-            {% block temp %}
-            {% endblock temp %}
             {% include './components/precipitation.html' %}
-            {% block precip %}
-            {% endblock precip %}
             {% include './components/wind.html' %}
-            {% block wind %}
-            {% endblock wind %}
         </div>
     </div>
 {% endblock content %}

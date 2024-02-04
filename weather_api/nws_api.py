@@ -24,7 +24,7 @@ class NWS:
 
         self.max_temp = self.current["temperature"]
         self.min_temp = self.max_temp
-        self.max_wind = 40
+        self.max_wind = 20
 
         # Process the response
         for item in chain(self.forecast, self.hourly):
@@ -42,12 +42,13 @@ class NWS:
                     item["icon"] = icon_set[-1]
             except LookupError:
                 item["icon"] = "wi-alien"
-            # Percipitation fix
+            # Percipitation value fix
             precip = item["probabilityOfPrecipitation"]["value"]
             if not precip:
                 item["probabilityOfPrecipitation"]["value"] = 0
-            # Wind value
-            
+            # Wind value(s) fix
+            wind_vals = re.findall('\d+',item["windSpeed"])
+            item["windSpeed"] = max((int(val) for val in wind_vals))
             # Wind icon
             item["windIcon"] = f"wi-towards-{item['windDirection'].lower()}"
             if item["temperature"] > self.max_temp:
