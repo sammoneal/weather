@@ -1,3 +1,6 @@
+"""
+Sample JSON responeses converted by the json package.
+"""
 metadata = {
     "@context": [
         "https://geojson.org/geojson-ld/geojson-context.jsonld",

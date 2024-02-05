@@ -1,3 +1,5 @@
+"""Static dictionary for icon lookup
+"""
 conditions_map = {
     "Chance Light Rain": ["wi-day-showers", "wi-night-alt-showers"],
     "Chance Light Snow": ["wi-day-snow", "wi-night-alt-snow"],

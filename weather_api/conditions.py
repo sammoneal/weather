@@ -1,3 +1,6 @@
+"""Simple response miner
+"""
+
 import time
 from .nws_api import NWS as WeatherAPI, geolocator
 

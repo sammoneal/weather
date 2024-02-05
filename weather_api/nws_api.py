@@ -1,3 +1,8 @@
+"""
+Contains the NWS class for requesting data from the National Weather Service API 
+and shaping it for the weather route templates.
+"""
+
 from itertools import chain
 from datetime import datetime
 from geopy.geocoders import Nominatim
@@ -9,6 +14,10 @@ geolocator = Nominatim(user_agent="flask_weather")
 
 
 class NWS:
+    """
+    Makes requests to the National Weather Service API and
+    """
+
     BASE_URL = "https://api.weather.gov/points/"
 
     def __init__(self, latitude, longitude) -> None:
@@ -26,26 +35,53 @@ class NWS:
         self.stats.analyze()
 
     @property
-    def city(self):
+    def city(self) -> str:
+        """City and State of the weather forecast.
+
+        Returns:
+            str: City and state abbreviation seperated by a comma.
+        """
         location = self.metadata["properties"]["relativeLocation"]["properties"]
         return f"{location['city']}, {location['state']}"
 
     @property
-    def coords(self):
+    def coords(self) -> list:
+        """Geographic coordinates of the weather forecast.
+
+        Returns:
+            list: Two items, latitude and longitude
+        """
         return self.metadata["properties"]["relativeLocation"]["geometry"][
             "coordinates"
         ]
 
     @property
-    def current(self):
+    def current(self) -> dict:
+        """Current conditions.
+
+        Returns:
+            dict: First entry in the forecast.
+        """
         return self.forecast[0]
 
     @staticmethod
-    def get_forecast(url):
-        weather = requests.get(url).json()
+    def get_forecast(url) -> dict:
+        """Pings an API endpoint and trims metadata
+
+        Args:
+            url (_type_): URL to be requested
+
+        Returns:
+            dict: JSON response trimmed and converted to dict
+        """
+        weather = requests.get(url, timeout=10).json()
         return weather["properties"]["periods"]
 
     def clean_forecast_data(self):
+        """
+        Processes the forecast and hourly responses.
+        Includes stat collection and icon assignment.
+        """
         for item in chain(self.forecast, self.hourly):
             # Time code
             item["time"] = datetime.strptime(
@@ -53,7 +89,9 @@ class NWS:
             )
             # Fix Values
             item["windSpeed"] = numeric_wind(item["windSpeed"])
-            item["probabilityOfPrecipitation"]["value"] = numeric_precip(item["probabilityOfPrecipitation"]["value"])
+            item["probabilityOfPrecipitation"]["value"] = numeric_precip(
+                item["probabilityOfPrecipitation"]["value"]
+            )
             # Stats
             self.stats.record_temp(item["temperature"])
             self.stats.record_precip(item["probabilityOfPrecipitation"]["value"])
