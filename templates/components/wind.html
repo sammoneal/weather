@@ -12,7 +12,7 @@
                 <div class="chart-line{{ i }}"></div>
             {% endfor %}
             {% for i in range(0,weather.hourly|length,2) %}
-                {% set height = (weather.hourly[i].windSpeed / weather.max_wind) * 100 %}
+                {% set height = (weather.hourly[i].windSpeed / weather.stats.wind.max) * 100 %}
                 {% set style = 'style=height:'+ height|string +'%' %}
                 <div class="mark-container" {{ style }}>
                     <i class="wi wi-wind {{ weather.hourly[i].windIcon }}"></i>
