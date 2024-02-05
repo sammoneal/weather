@@ -1,7 +1,7 @@
 {% block temp %}
 <div class="chart-container tile">
   <div class="key">
-    {% for label in weather.stats.temp.values %}
+    {% for label in weather.stats.temp %}
     <p>{{ label }}<span class="unit">&degF</span></p>
     {% endfor %}
   </div>

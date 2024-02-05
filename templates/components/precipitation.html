@@ -1,18 +1,16 @@
 {% block precip %}
 <div class="chart-container tile">
   <div class="key">
-    <p>100<span class="unit">%</span></p>
-    <p>75<span class="unit">%</span></p>
-    <p>50<span class="unit">%</span></p>
-    <p>25<span class="unit">%</span></p>
-    <p>0<span class="unit">%</span></p>
+    {% for label in weather.stats.precip %}
+      <p>{{ label }}<span class="unit">%</span></p>
+    {% endfor %}
   </div>
   <div class="graphic-container">
     {% for i in range(1,6) %}
       <div class="chart-line{{ i }}"></div>
     {% endfor %}
     {% for item in weather.hourly %}
-        {% set height = item.probabilityOfPrecipitation.value %}
+        {% set height = ((item.probabilityOfPrecipitation.value - weather.stats.precip.min) / weather.stats.precip.diff) * 100%}
         {% if item.isDaytime %}
             {% set class = 'day' %}
         {% else %}
