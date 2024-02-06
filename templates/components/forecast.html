@@ -1,4 +1,5 @@
 {% block forecast %}
+<h2>Forecast</h2>
 <div class="forecast-container">
     <div class="primary tile {{ 'day' if weather.current.isDaytime else 'night' }}">
         <h4 class="primary-day">{{ weather.current.time.strftime("%-m/%-d %A") }}</h4>
