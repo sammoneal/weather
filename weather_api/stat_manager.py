@@ -11,7 +11,7 @@ from .nws_utils import numeric_wind, numeric_precip
 class WeatherStatManager:
     """Manages the stats that are graphed: temperature, percipiation, and wind speed."""
 
-    def __init__(self, init_cond: int) -> None:
+    def __init__(self, init_cond: dict) -> None:
         self.temp = WeatherStat(init_cond["temperature"])
         self.precip = WeatherStat(
             numeric_precip(init_cond["probabilityOfPrecipitation"]["value"])
