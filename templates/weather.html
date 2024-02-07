@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-icons.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-icons-wind.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    {% block styles %}
+    {% endblock styles %}
 </head>
 <body>
     {% include 'nav.html' %}
