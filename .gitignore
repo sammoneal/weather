@@ -1,6 +1,7 @@
 .vscode
 .pytest_cache
 .venv
+.env
 test.txt
 **/__pycache__
 **/.DS_Store

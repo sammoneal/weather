@@ -9,6 +9,7 @@ requests = "*"
 geopy = "*"
 wtforms = "*"
 flask-wtf = "*"
+python-dotenv = "*"
 
 [dev-packages]
 pylint = "*"
