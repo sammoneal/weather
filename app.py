@@ -16,7 +16,7 @@ app.secret_key = os.getenv("SECRET_KEY")
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-    """Home and splash page with search function
+    """Home and splash page with hero search bar
     """
     form = SearchForm()
     if form.validate_on_submit():
@@ -41,7 +41,7 @@ def weather(lat:float, long:float):
         )
     weather_data = WeatherAPI(lat, long)
     return render_template(
-        "dashboard.html", title=weather.city + " - Weather", weather=weather_data
+        "dashboard.html", title=weather_data.city + " - Weather", weather=weather_data
     )
 
 

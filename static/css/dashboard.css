@@ -1,3 +1,8 @@
+/* Theme Colors */
+:root{
+  --theme-black: rgb(38, 38, 38);
+}
+
 /* Layout */
 body {
   background-color: skyblue;
@@ -15,25 +20,28 @@ body {
 }
 /* Shared formats */
 .tile {
-  border: 2px solid rgb(38, 38, 38);
+  border: 2px solid var(--theme-black);
 }
 .day {
   background-color: lightcyan;
 }
 .night {
-  background-color:lightpink;
+  background-color:rgb(251, 190, 225);
 }
 .day.bar {
-  background-color: cornflowerblue;
+  background-color: rgb(125, 170, 254);
 }
 .day.bar.alt {
-  background-color: darkslateblue;
+  background-color: rgb(89, 107, 223);
 }
 .night.bar {
-  background-color: plum;
+  background-color: rgb(190, 150, 225);
 }
 .night.bar.alt {
-  background-color:darkmagenta;
+  background-color:rgb(134, 50, 100);
+}
+.city{
+  margin-left: 2rem;
 }
 /* Forecast layout */
 .forecast-container {

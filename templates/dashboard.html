@@ -5,7 +5,7 @@
 {% block content %}
     <div class="page-container">
         <div class="dashboard-container">
-            <h1>{{ weather.city }}</h1>
+            <h1 class="city">{{ weather.city }}</h1>
             {% include './components/forecast.html' %}
             {% include './components/temperature.html' %}
             {% include './components/precipitation.html' %}
