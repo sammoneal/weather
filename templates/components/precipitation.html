@@ -8,7 +8,7 @@
   </div>
   <div class="graphic-container">
     {% for i in range(1,6) %}
-      <div class="chart-line{{ i }}"></div>
+      <div class="chart-line line{{ i }}"></div>
     {% endfor %}
     {% for item in weather.hourly %}
         {% set height = ((item.probabilityOfPrecipitation.value - weather.stats.precip.min) / weather.stats.precip.diff) * 100%}
@@ -18,7 +18,7 @@
             {% set class = 'night' %}
         {% endif %}
         {% set style = 'style=height:'+ height|string +'%'%}
-        <div class="bar alt {{ class }}" {{ style }}></div>
+        <div class="bar theme2 {{ class }}" {{ style }}></div>
     {% endfor %}
   </div>
 </div>

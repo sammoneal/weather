@@ -1,0 +1,17 @@
+:root{
+    --theme-black: rgb(38, 38, 38);
+    --theme-white: rgb(250, 250, 250);
+    --theme-background: #94D1DC;
+    --theme-day-tile: #CDDDF4;
+    --theme-night-tile: #A2A4E4;
+    --theme-chartarea: #C9ECF3;
+    --theme-day-bar-1: #6F92C7;
+    --theme-day-bar-2: #4A71AA;
+    --theme-day-bar-3: #315995;
+    --theme-night-bar-1: #787ACD;
+    --theme-night-bar-2: #5557B3;
+    --theme-night-bar-3: #3A3D9E;
+    --theme-title-text: var(--theme-black);
+    --theme-day-text: var(--theme-black);
+    --theme-night-text: var(--theme-black);
+}

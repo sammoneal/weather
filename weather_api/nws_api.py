@@ -3,12 +3,13 @@ Contains the NWS class for requesting data from the National Weather Service API
 and shaping it for the weather route templates.
 """
 
+import re
 from itertools import chain
 from datetime import datetime
 from geopy.geocoders import Nominatim
 import requests
 from .stat_manager import WeatherStatManager
-from .nws_utils import icon_mapper, numeric_wind, numeric_precip
+from .nws_utils import icon_mapper, numeric_wind, numeric_precip, theme_mapper
 
 geolocator = Nominatim(user_agent="flask_weather")
 
@@ -32,6 +33,7 @@ class NWS:
 
         # Process the response
         self.clean_forecast_data()
+        self.theme = theme_mapper(re.split("then", self.forecast[0]["shortForecast"])[0])
         self.stats.analyze()
 
     @property

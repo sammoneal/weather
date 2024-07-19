@@ -51,3 +51,26 @@ def icon_mapper(record: dict) -> str:
         return icon_set[-1]
     except LookupError:
         return "wi-alien"
+
+
+def theme_mapper(conditions: str) -> str:
+    """Assigns a stylesheet based on the current conditions.
+
+    Args:
+        conditions (str): Current conditions description as string.
+
+    Returns:
+        str: Stylesheet name without .css file extension.
+    """
+    conditions = conditions.lower()
+    trigger_conditions = ['storm','snow','rain']
+    for item in trigger_conditions:
+        if conditions.find(item) > 0:
+            return item
+    if max(conditions.find('haze'), conditions.find('fog')) > 0:
+        return 'fog'
+    elif conditions == 'sunny':
+        return 'sunny'
+    elif conditions in ['cloudy', 'mostly cloudy']:
+        return 'cloudy'
+    return 'clear'

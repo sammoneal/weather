@@ -8,13 +8,18 @@
         </div>
         <div class="wind-graphic-container">
             {% for i in range(1,6) %}
-                <div class="chart-line{{ i }}"></div>
+                <div class="chart-line line{{ i }}"></div>
             {% endfor %}
             {% for i in range(0,weather.hourly|length,2) %}
                 {% set height = ((weather.hourly[i].windSpeed - weather.stats.wind.min) / weather.stats.wind.diff) * 100 %}
                 {% set style = 'style=height:'+ height|string +'%' %}
+                {% if weather.hourly[i].isDaytime %}
+                    {% set class = 'day' %}
+                {% else %}
+                    {% set class = 'night' %}
+                {% endif %}
                 <div class="mark-container" {{ style }}>
-                    <i class="wi wi-wind {{ weather.hourly[i].windIcon }}"></i>
+                    <i class="wi wi-wind {{ weather.hourly[i].windIcon }} theme3 {{ class }}"></i>
                 </div>
             {% endfor %}
         </div>
