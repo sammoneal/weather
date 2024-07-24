@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(38, 38, 38);
-    border-bottom: 2px solid white;
+    background-color: var(--theme-black);
+    border-bottom: 2px solid var(--theme-white);
     height: 7vh;
     padding-left: 30px;
     padding-right: 30px;
@@ -19,7 +19,7 @@
   }
   nav a {
     font-size: x-large;
-    color: white;
+    color: var(--theme-white);
     margin: 10px;
     text-decoration: none;
   }
