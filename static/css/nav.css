@@ -42,11 +42,19 @@ footer p{
 .attribution-images{
   display: flex;
   justify-content: space-evenly;
+  align-items: baseline;
   width: 30%;
-  height: 7vh;
+  height: 10vh;
 }
 
 .footer-icon{
   flex: 1;
+}
+
+.icon-small{
   height: 7vh;
+}
+
+.icon-large{
+  height: 10vh;
 }

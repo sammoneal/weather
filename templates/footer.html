@@ -1,20 +1,26 @@
 <footer>
     <div class="attribution-images">
-        <img
-        src="{{ url_for('static', filename='icons/national-weather-service.svg') }}"
-        alt=""
-        class="footer-icon"
-        />
-        <img
-        src="{{ url_for('static', filename='icons/open-street-maps.svg') }}"
-        alt=""
-        class="footer-icon"
-        />
-        <img
-        src="{{ url_for('static', filename='icons/NOAA.svg') }}"
-        alt=""
-        class="footer-icon"
-        />
+        <a target="_blank" rel="noopener noreferrer" href="https://www.weather.gov/">
+            <img
+            src="{{ url_for('static', filename='icons/national-weather-service.svg') }}"
+            alt="National Weather Service Attribution"
+            class="footer-icon icon-large"
+            />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/">
+            <img
+            src="{{ url_for('static', filename='icons/open-street-maps.svg') }}"
+            alt="Open Street Maps Attribution"
+            class="footer-icon icon-small"
+            />
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.noaa.gov/">
+            <img
+            src="{{ url_for('static', filename='icons/NOAA.svg') }}"
+            alt="NOAA Attribition"
+            class="footer-icon icon-large"
+            />
+        </a>
     </div>
     <p><strong>&copy; Sam O'Neal 2024</strong></p>
 </footer>
