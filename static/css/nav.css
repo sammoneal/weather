@@ -27,3 +27,26 @@
     height: 30px;
     width: auto;
   }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p{
+  text-align: center;
+  font-size: 1rem;
+}
+
+.attribution-images{
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+  height: 7vh;
+}
+
+.footer-icon{
+  flex: 1;
+  height: 7vh;
+}
