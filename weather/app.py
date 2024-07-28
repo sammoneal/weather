@@ -5,8 +5,8 @@ from flask import Flask, render_template
 from flask.helpers import url_for
 from werkzeug.utils import redirect
 from dotenv import load_dotenv
-from weather_api import WeatherAPI
-from forms import SearchForm
+from .weather_api import WeatherAPI
+from .forms import SearchForm
 
 load_dotenv()
 
