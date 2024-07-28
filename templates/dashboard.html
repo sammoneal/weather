@@ -4,13 +4,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 {% endblock styles %}
 {% block content %}
-    <div class="page-container">
-        <div class="dashboard-container">
-            <h1 class="city">{{ weather.city }}</h1>
-            {% include './components/forecast.html' %}
-            {% include './components/temperature.html' %}
-            {% include './components/precipitation.html' %}
-            {% include './components/wind.html' %}
-        </div>
-    </div>
+    <main class="page-container">
+        <h1 class="city">{{ weather.city }}<span class="coords">{{ weather.coords[0] }},{{ weather.coords[1] }}</span></h1>
+        {% include './components/forecast.html' %}
+        {% include './components/temperature.html' %}
+        {% include './components/precipitation.html' %}
+        {% include './components/wind.html' %}
+    </main>
 {% endblock content %}

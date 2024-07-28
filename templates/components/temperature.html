@@ -1,25 +1,25 @@
-{% block temp %}
-<h2>Temperature</h2>
-<div class="chart-container tile">
-  <div class="key">
-    {% for label in weather.stats.temp %}
-    <p>{{ label }}<span class="unit">&degF</span></p>
-    {% endfor %}
+<article>
+  <h2 class="chart-title">Temperature</h2>
+  <div class="chart-container tile">
+    <div class="key">
+      {% for label in weather.stats.temp %}
+      <p>{{ label }}<span class="unit">&degF</span></p>
+      {% endfor %}
+    </div>
+    <div class="graphic-container">
+      {% for i in range(1,6) %}
+        <div class="chart-line line{{ i }}"></div>
+      {% endfor %}
+      {% for item in weather.hourly %}
+          {% set height = (((item.temperature - weather.stats.temp.min) / weather.stats.temp.diff) * 100) // 1 %}
+          {% if item.isDaytime %}
+              {% set class = 'day' %}
+          {% else %}
+              {% set class = 'night' %}
+          {% endif %}
+          {% set style = 'style=height:'+ height|string +'%'%}
+          <div class="bar theme1 {{ class }}" {{ style }}></div>
+      {% endfor %}
+    </div>
   </div>
-  <div class="graphic-container">
-    {% for i in range(1,6) %}
-      <div class="chart-line line{{ i }}"></div>
-    {% endfor %}
-    {% for item in weather.hourly %}
-        {% set height = (((item.temperature - weather.stats.temp.min) / weather.stats.temp.diff) * 100) // 1 %}
-        {% if item.isDaytime %}
-            {% set class = 'day' %}
-        {% else %}
-            {% set class = 'night' %}
-        {% endif %}
-        {% set style = 'style=height:'+ height|string +'%'%}
-        <div class="bar theme1 {{ class }}" {{ style }}></div>
-    {% endfor %}
-  </div>
-</div>
-{% endblock temp %}
+</article>

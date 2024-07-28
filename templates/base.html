@@ -5,17 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-icons.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-icons-wind.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
     {% block styles %}
     {% endblock styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-icons-wind.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 </head>
 <body>
     {% include 'nav.html' %}
-    <main>
-        {% block content %}
-        {% endblock content %}
-    </main>
+    {% block content %}
+    {% endblock content %}
     {% include 'footer.html' %}
 </body>

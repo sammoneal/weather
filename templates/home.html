@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/splash.css') }}">
 {% endblock styles %}
 {% block content %}
-<div class="page-container">
+<main class="page-container">
     <form action="" method="post" class="form-layout-splash">
         {{ form.hidden_tag() }}
       <fieldset class="form-container">
@@ -12,5 +12,5 @@
         <button><img class="icon" src="../static/icons/location-pin-svgrepo-com.svg" alt=""></button>
       </fieldset>
     </form>
-</div>
+  </main>
 {% endblock content %}

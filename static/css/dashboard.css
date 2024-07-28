@@ -5,13 +5,11 @@ body {
   margin: 0;
 }
 .page-container {
-  display: flex;
-  justify-content: center;
-  color: var(--theme-title-text);
-}
-.dashboard-container {
   width: 95%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
+  color: var(--theme-title-text);
 }
 
 /* Themeing */
@@ -51,7 +49,21 @@ body {
 
 /* Title */
 .city{
-  margin-left: 2rem;
+
+}
+
+.coords{
+  font-size: 60%;
+  margin-left: 1rem;
+  font-weight: lighter;
+}
+
+.section-title{
+  margin-left: 1rem;
+}
+
+.chart-title{
+  margin-left: 1rem;
 }
 
 /* Forecast layout */
@@ -96,6 +108,7 @@ body {
   margin-left: 20px;
   flex: 1;
   font-size: 4.5rem;
+  font-weight: bold;
 }
 .primary-conditions {
   flex: 1;
@@ -167,6 +180,7 @@ body {
   margin-left: 20px;
   flex: 1;
   font-size: 4rem;
+  font-weight: bold;
 }
 .later-conditions {
   flex: 1;
@@ -217,6 +231,8 @@ body {
 }
 .secondary-day {
   margin: 10px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
 }
 .secondary-middle-container {
   height: 50%;
@@ -228,13 +244,14 @@ body {
   gap: 10px;
 }
 .secondary-temp {
-  margin-left: 20px;
+  margin-left: 10px;
   flex: 1;
   font-size: 2rem;
 }
 .secondary-conditions {
   flex: 1;
   font-size: 2.5rem;
+  margin-left: 0px;
 }
 
 /* Chart */
@@ -259,7 +276,8 @@ body {
   padding-right: 2px;
 }
 .unit {
-  font-size: 90%;
+  font-size: 75%;
+  font-weight: lighter;
 }
 .unit-mph {
   font-size: 70%;

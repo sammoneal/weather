@@ -30,7 +30,7 @@
 body {
   margin: 0;
   background: #33cccc; /* Fallback */
-  animation: color 20s infinite linear;
+  animation: color 30s infinite linear;
 }
 svg {
   color: white;
