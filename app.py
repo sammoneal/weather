@@ -44,6 +44,3 @@ def weather(lat:float, long:float):
         "dashboard.html", title=weather_data.city + " - Weather", weather=weather_data
     )
 
-
-if __name__ == "__main__":
-    app.run(debug=True, port=8000)
