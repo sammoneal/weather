@@ -1,0 +1,17 @@
+<article class="primary tile {{ 'day' if weather.current.isDaytime else 'night' }}">
+    <h3 class="primary-day">{{ weather.current.time.strftime("%-m/%-d %A") }}</h3>
+    <div class="primary-middle-container">
+        <p class="primary-temp">{{ weather.current.temperature }}<span class="unit">&degF</span></p>
+        <i class="wi {{ weather.current.icon }} primary-conditions"></i>
+        <div class="primary-percip">
+            <i class="wi wi-umbrella"></i>
+            <p>{{ weather.current.probabilityOfPrecipitation.value }}%</p>
+        </div>
+    </div>
+    <div class="primary-wind">
+        <i class="wi wi-strong-wind"></i>
+        <p>{{ weather.current.windSpeed }} <span class="unit">mph</span> </p>
+        <p/>{{ weather.current.windDirection }}</p>
+        <i class="wi wi-wind {{ weather.current.windIcon }}"></i>
+    </div>
+</article>

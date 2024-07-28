@@ -1,0 +1,18 @@
+<article class="later tile {{ 'day' if weather.forecast[1].isDaytime else 'night' }}">
+    <h3 class="later-day">{{ weather.forecast[1].time.strftime("%-m/%-d %A") }}</h3>
+        <div class="later-middle-container">
+            <p class="later-temp">{{ weather.forecast[1].temperature }}<span class="unit">&degF</span></p>
+            <i class="wi {{ weather.forecast[1].icon }} later-conditions"></i>
+        </div>
+        <div class="later-bottom-container">
+            <div class="later-wind">
+                <p>{{ weather.forecast[1].windSpeed }} <span class="unit">mph</span></p>
+                <p/>{{ weather.forecast[1].windDirection }}</p>
+                <i class="wi wi-wind {{ weather.forecast[1].windIcon }}"></i>
+            </div>
+            <div class="later-percip">
+                <i class="wi wi-umbrella"></i>
+                <p>{{ weather.forecast[1].probabilityOfPrecipitation.value }}%</p>
+            </div>
+        </div>
+</article>
