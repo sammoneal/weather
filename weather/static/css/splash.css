@@ -39,26 +39,24 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 75vh;
   width: 100%;
   /* border: 3px solid green; */
 }
-.form-layout-splash {
-  /*         border: 3px solid red; */
-  width: 40%;
+.form-container{
+  position: relative;
+  min-width: 40%;
 }
-.form-container {
-  /*         border: 3px solid blue; */
+.form-inputs-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 0.4rem;
 }
 fieldset{
   border: none;
 }
 input[type=text] {
-  flex-grow: 8;
+  flex-grow: 10;
 }
 input[type=submit] {
   flex-grow: 1;
@@ -69,19 +67,41 @@ input {
   color: white;
   border: 2px solid white;
   border-radius: 8px;
-  font-size: 30px;
+  font-size: x-large;
 }
 button {
   padding: 12px 10px;
-  flex-grow: 1;
-  height: 100%;
   background-color: rgb(38, 38, 38);
   color: white;
   border: 2px solid white;
   border-radius: 8px;
-  font-size: x-large;
 }
 .icon{
-  height: 30px;
+  height: 2rem;
   width: auto;
+}
+
+/* Search dropdown autocomplete */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--theme-white);
+  min-width: 60%;
+  border: 2px solid var(--theme-black);
+  border-radius: 8px;
+  margin-left: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 1;
+}
+
+.dropdown-entry {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+
+.dropdown-entry:hover {
+  cursor: pointer;
 }

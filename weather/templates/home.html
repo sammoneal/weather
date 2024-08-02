@@ -2,15 +2,22 @@
 {% block styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/splash.css') }}">
 {% endblock styles %}
+{% block scripts %}
+  <script src="{{ url_for('static', filename='scripts/data.js') }}"></script>
+  <script src="{{ url_for('static', filename='scripts/autofill.js') }}"></script>
+{% endblock scripts %}
 {% block content %}
 <main class="page-container">
-    <form action="" method="post" class="form-layout-splash">
+    <form id="form" action="" method="post" class="form-container">
         {{ form.hidden_tag() }}
-      <fieldset class="form-container">
+      <fieldset class="form-inputs-container">
         {{ form.location }}
-        <button type=submit name="submit" value="Forecast"><img class="icon" src="../static/icons/magnifying-glass-for-search-svgrepo-com.svg" alt=""></button>
+        <button type=submit name="forecast" value="Forecast"><img class="icon" src="../static/icons/magnifying-glass-for-search-svgrepo-com.svg" alt=""></button>
         <button><img class="icon" src="../static/icons/location-pin-svgrepo-com.svg" alt=""></button>
       </fieldset>
+      <div class="dropdown-content" id="dropdown">
+        <p>Hello World!</p>
+      </div>
     </form>
   </main>
 {% endblock content %}
