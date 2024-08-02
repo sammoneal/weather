@@ -105,3 +105,8 @@ button {
 .dropdown-entry:hover {
   cursor: pointer;
 }
+
+.match {
+  font-weight: bolder;
+  color: navy;
+}
