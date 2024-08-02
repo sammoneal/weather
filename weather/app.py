@@ -41,6 +41,9 @@ def weather(lat:float, long:float):
         )
     weather_data = WeatherAPI(lat, long)
     return render_template(
-        "dashboard.html", title=weather_data.city + " - Weather", weather=weather_data
+        "dashboard.html", 
+        title=weather_data.city + " - Weather",
+        weather=weather_data,
+        coord_str = f'{round(weather_data.coords[1], 4)}, {round(weather_data.coords[0], 4)}'
     )
 

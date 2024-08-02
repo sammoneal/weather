@@ -5,7 +5,7 @@
 {% endblock styles %}
 {% block content %}
     <main class="page-container">
-        <h1 class="city">{{ weather.city }}<span class="coords">{{ weather.coords[0] }},{{ weather.coords[1] }}</span></h1>
+        <h1 class="city">{{ weather.city }}<span class="coords">{{ coord_str }}</span></h1>
         {% include './components/forecast.html' %}
         {% include './components/temperature.html' %}
         {% include './components/precipitation.html' %}
